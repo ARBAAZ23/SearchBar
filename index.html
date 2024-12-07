@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH BAR</title>
+    
+    <link rel="stylesheet" href="search.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>TYPE TO SEARCH</h1>
+
+    <div class="search-container">
+        <input type="search" id="searchInput" placeholder="Search For Images">
+    </div>
+
+    <div class="images">
+        <div class="box" data-name="bear">
+            <img src="img/bear.avif" alt="BEAR IMAGES">
+            <h6>Bear</h6>
+        </div>
+
+        <div class="box" data-name="butterfly">
+            <img src="img/butterfly.avif" alt="Butterlfy IMAGES">
+            <h6>Butterfly</h6>
+        </div>
+
+        <div class="box" data-name="parrot">
+            <img src="img/parrot.avif" alt="Parrot IMAGES">
+            <h6>Parrot</h6>
+        </div>
+
+        <div class="box" data-name="sparrow">
+            <img src="img/sparrow.avif" alt="Sparrow IMAGES">
+            <h6>Sparrow</h6>
+        </div>
+
+        <div class="box" data-name="tasty food">
+            <img src="img/food1.avif" alt="Food IMAGES">
+            <h6>Tasty food</h6>
+        </div>
+
+        <div class="box" data-name="tasty food">
+            <img src="img/food2.avif" alt="Butterlfy IMAGES">
+            <h6>Tasty food</h6>
+        </div>
+
+        <div class="box" data-name="tasty food">
+            <img src="img/food3.avif" alt="Parrot IMAGES">
+            <h6>Tasty food</h6>
+        </div>
+
+        <div class="box" data-name="fort">
+            <img src="img/city.avif" alt="Sparrow IMAGES">
+            <h6>Fort</h6>
+        </div>
+
+        <div class="box" data-name="taj-mahal">
+            <img src="img/city2.avif" alt="Sparrow IMAGES">
+            <h6>Taj Mahal</h6>
+        </div>
+
+        <div class="box" data-name="Kutub minar">
+            <img src="img/city3.avif" alt="Sparrow IMAGES">
+            <h6>Kutub Minar</h6>
+        </div>
+
+        <div class="box" data-name="gate of india">
+            <img src="img/city4.avif" alt="Sparrow IMAGES">
+            <h6>Gate of India</h6>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2024 || Developed and  created by <a href="tel:919920433647">Arbaaz</a> Developer</p>
+        <div class="link">
+            <a href="https://wa.me/919920433647"  class="fab fa-whatsapp"></a>
+            <a href="tel:919920433647"class="fas fa-phone"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-telegram "></a>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const boxes = document.querySelectorAll('.box');
+
+
+        searchInput.addEventListener('input', function(){
+            const searchText = searchInput.value.toLowerCase();
+
+            boxes.forEach(box =>{
+
+                const name = box.getAttribute('data-name').toLowerCase();
+
+
+                if(name.includes(searchText)){
+                    box.style.display = "block";
+                }
+                else{
+                    box.style.display = "none";
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
